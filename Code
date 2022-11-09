@@ -1,0 +1,68 @@
+package dsa;
+
+import java.util.*;
+
+public class BubbleSort {
+
+    int[] bubblesort(int[] a) {
+
+        for(int i=0;i<10;i++) {
+            for(int j=0;j<10-i-1;j++) {
+                if(a[j]>a[j+1]) {
+                    int temp=a[j+1];
+                    a[j+1]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+        return a;
+    }
+    char[] bubblesort(char[] a) {
+        for(int i=0;i<10;i++) {
+            for(int j=0;j<10-i-1;j++) {
+                if((int)a[j]>(int)a[j+1]) {
+                	char temp=a[j+1];
+                    a[j+1]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+        return a;
+    }
+    void display(char[] a) {
+        for(int i=0;i<10;i++) {
+            System.out.println(a[i]);
+        }
+    }
+    void display(int[] a) {
+        for(int i=0;i<10;i++) {
+            System.out.println(a[i]);
+        }
+    }
+    public static void main(String[] args) {
+        BubbleSort obj=new BubbleSort();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("press 1 for int sorting");
+        System.out.println("press 2 for character sorting");
+        int m=sc.nextInt();
+        switch (m) {
+
+            case 1:
+                int a[]=new int[10];
+                for(int i=0;i<10;i++) {
+                    System.out.println("enter data for int :");
+                    a[i]=sc.nextInt();
+                }
+                obj.display(obj.bubblesort(a));
+                break;
+            case 2:
+                char b[]=new char[10];
+                for(int i=0;i<10;i++) {
+                    System.out.println("enter  for char :");
+                    b[i]=sc.next().charAt(0);
+                }
+                obj.display(obj.bubblesort(b));
+                break;
+        }
+    }
+}
